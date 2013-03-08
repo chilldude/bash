@@ -23,7 +23,7 @@ shopt -s cdspell
 shopt -s cmdhist
 
 # edit this file!
-alias profile='$EDITOR ~/.bash_profile -w; sauce'
+alias profile='vim ~/.bash_profile -w; sauce'
 alias sauce='source ~/.bash_profile'
 
 #flush cache
