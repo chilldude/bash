@@ -7,12 +7,6 @@ export VMAIL_HTML_PART_READER='elinks -dump'
 #export PS1="\t | \u@\h | \w $ "
 PS1="\[\033[0;36m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[36m\\]"; else echo "\\[\\033[36m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"
 
-# MacPorts Installer addition on 2012-07-02_at_16:16:03: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # don't put duplicate lines in the history
 export HISTCONTROL=ignoreboth:erasedups
 # set history length
@@ -81,3 +75,9 @@ echo -e "${open_green_escape}|                                                  
 echo -e "${open_green_escape}+-----------------------------------------------------------+"
 echo -e " "
 source "`brew --prefix grc`/etc/grc.bashrc"
+
+# MacPorts Installer addition on 2012-07-02_at_16:16:03: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
