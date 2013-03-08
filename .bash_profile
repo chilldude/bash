@@ -7,10 +7,6 @@ export VMAIL_HTML_PART_READER='elinks -dump'
 #export PS1="\t | \u@\h | \w $ "
 PS1="\[\033[0;36m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[36m\\]"; else echo "\\[\\033[36m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"
 
-##
-# Your previous /Users/Tony/.bash_profile file was backed up as /Users/Tony/.bash_profile.macports-saved_2012-07-02_at_16:16:03
-##
-
 # MacPorts Installer addition on 2012-07-02_at_16:16:03: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
@@ -32,8 +28,28 @@ shopt -s cdspell
 # save all lines of a multiple-line command in the same history entry (allows easy re-editing of multi-line commands)
 shopt -s cmdhist
 
+# edit this file!
+alias profile='$EDITOR ~/.bash_profile -w; sauce'
+alias sauce='source ~/.bash_profile'
+
 #flush cache
 alias flush='dscacheutil -flushcache'
+
+#copy the working directory into the clipboard
+alias cwd='pwd | pbcopy'
+
+# listing files - (lazy)
+alias l='ls -alh'
+alias lt='l -t | less'
+
+# tac - unix cat but backwards. hilarity > function
+alias tac="sed '1!G;h;\$!d'"
+
+#generate a random password
+alias randpw="openssl rand -base64 12"
+
+# Lap warmer (do not use on low power)
+alias warm='nice -n 20 ruby -e "loop {}" &'
 
 #textmate shortcut
 alias mate='mate2'
